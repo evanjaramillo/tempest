@@ -1,0 +1,23 @@
+PROJECT( tempest LANGUAGES C CXX)
+
+ADD_LIBRARY( tempest SHARED
+	include/tempest/Test.h
+	src/Test.cpp
+)
+
+TARGET_INCLUDE_DIRECTORIES( tempest
+
+	PUBLIC
+		$<INSTALL_INTERFACE:include>
+		$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+	PRIVATE
+		${CMAKE_CURRENT_SOURCE_DIR}/src	
+
+)
+
+TARGET_COMPILE_FEATURES( tempest
+
+	PRIVATE
+		cxx_std_17
+
+)

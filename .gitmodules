@@ -1,0 +1,3 @@
+[submodule "extern/bzip2"]
+	path = extern/bzip2
+	url = https://github.com/evanjaramillo/bzip2.git
