@@ -75,3 +75,6 @@ matrix:
       directories:
         - $HOME/AppData/Local/Temp/chocolatey
         - /C/tools/msys64
+    script:
+      - $mingw64 mkdir -p build/
+      - $mingw64 cd build/ && cmake -DCMAKE_BUILD_TYPE=Release .. && make
