@@ -22,3 +22,5 @@ matrix:
       - export CC=/usr/bin/gcc-7
       - export CXX=/usr/bin/g++-7
       - gcc -v && g++ -v && cmake --version
+      - cmake -S . -B build/
+      - cmake --build build/
