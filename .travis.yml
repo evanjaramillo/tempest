@@ -32,3 +32,10 @@ matrix:
       homebrew:
         packages:
           - cmake
+          - cmake-data
+          - g++-7
+    script:
+      - mkdir -p build/
+      - cd build/
+      - cmake ../
+      - cmake --build .
