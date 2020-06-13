@@ -41,7 +41,9 @@ matrix:
       - cmake --build .
   - os: windows
     script:
-      - mkdir -p build/
+      - choco install make
+      - choco install cmake
+      - mkdir build/
       - cd build/
       - cmake ../
-      - make
+      - cmake --build .
