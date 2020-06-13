@@ -40,6 +40,8 @@ matrix:
       - cmake ../
       - cmake --build .
   - os: windows
+    compiler:
+      - gcc
     script:
       - choco install make
       - choco install cmake
