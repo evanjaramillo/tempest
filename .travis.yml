@@ -24,7 +24,7 @@ matrix:
       - gcc -v && g++ -v && cmake --version
       - mkdir -p build/
       - cd build/
-      - cmake ../
+      - cmake -DCMAKE_BUILD_TYPE=Release ../
       - cmake --build .
   - os: osx
     osx_image: xcode11.5
@@ -37,7 +37,7 @@ matrix:
     script:
       - mkdir -p build/
       - cd build/
-      - cmake ../
+      - cmake -DCMAKE_BUILD_TYPE=Release ../
       - cmake --build .
   - os: windows
     compiler:
@@ -47,5 +47,5 @@ matrix:
       - choco install cmake
       - mkdir build/
       - cd build/
-      - cmake ../
+      - cmake -DCMAKE_BUILD_TYPE=Release ../
       - make
