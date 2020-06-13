@@ -23,5 +23,5 @@ matrix:
       - export CXX=/usr/bin/g++-7
       - gcc -v && g++ -v && cmake --version
       - mkdir build/
-      - cmake -S . -B build/
+      - cmake -S ./ -B build/
       - cmake --build build/
