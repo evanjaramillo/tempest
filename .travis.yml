@@ -28,12 +28,18 @@ matrix:
       - cmake --build .
   - os: osx
     osx_image: xcode11.5
+    compiler:
+      - gcc
     addons:
       homebrew:
         packages:
           - cmake
-          - cmake-data
-          - g++-7
+    script:
+      - mkdir -p build/
+      - cd build/
+      - cmake ../
+      - cmake --build .
+  - os: windows
     script:
       - mkdir -p build/
       - cd build/
