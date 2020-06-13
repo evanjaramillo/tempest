@@ -26,3 +26,9 @@ matrix:
       - cd build/
       - cmake ../
       - cmake --build .
+  - os: osx
+    osx_image: xcode11.5
+    addons:
+      homebrew:
+        packages:
+          - cmake
