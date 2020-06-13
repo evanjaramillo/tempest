@@ -2,22 +2,23 @@ language:
   - c
   - cpp
   
-dist: xenial
-
-compiler:
-  - gcc
-
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - g++-7
-      - cmake
-      - cmake-data
-script:
-  - sudo ln -s /usr/bin/gcc-7 /usr/local/bin/gcc
-  - sudo ln -s /usr/bin/g++-7 /usr/local/bin/g++
-  - export CC=/usr/bin/gcc-7
-  - export CXX=/usr/bin/g++-7
-  - gcc -v && g++ -v && cmake --version
+matrix:
+  include:
+  - os: linux
+    dist: xenial
+    compiler:
+      - gcc
+    addons:
+      apt:
+        sources:
+          - ubuntu-toolchain-r-test
+        packages:
+          - g++-7
+          - cmake
+          - cmake-data
+    script:
+      - sudo ln -s /usr/bin/gcc-7 /usr/local/bin/gcc
+      - sudo ln -s /usr/bin/g++-7 /usr/local/bin/g++
+      - export CC=/usr/bin/gcc-7
+      - export CXX=/usr/bin/g++-7
+      - gcc -v && g++ -v && cmake --version
