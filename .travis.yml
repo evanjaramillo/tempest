@@ -77,4 +77,6 @@ matrix:
         - /C/tools/msys64
     script:
       - $msys2 mkdir -p build/
-      - $msys2 cd build/ && cmake -DCMAKE_BUILD_TYPE=Release .. && make
+      - $msys2 cd build/
+      - $msys2 cmake -DCMAKE_BUILD_TYPE=Release ../
+      - $msys2 make
