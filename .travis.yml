@@ -76,7 +76,7 @@ matrix:
         - $HOME/AppData/Local/Temp/chocolatey
         - /C/tools/msys64
     script:
-      - $msys2 pacman -S cmake
+      - $msys2 pacman -Sy cmake
       - $msys2 mkdir -p build/
       - $msys2 cd build/
       - $msys2 cmake -DCMAKE_BUILD_TYPE=Release ../
